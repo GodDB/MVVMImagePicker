@@ -35,4 +35,6 @@ dependencies {
         implementation(roomKtx)
         kapt(room_compiler)
     }
+
+    implementation(Libs.inject)
 }

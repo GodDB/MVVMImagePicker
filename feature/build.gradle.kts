@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -33,10 +34,15 @@ dependencies {
         implementation(viewModel)
         implementation(liveData)
         implementation(activityKtx)
+        implementation(hilt_android)
+        kapt(hilt_compiler)
+        kapt(viewModel_hilt)
+        implementation(pagingLibrary3)
     }
 
     with(Libs.Glide) {
         implementation(glide)
         kapt(glide_compiler)
     }
+
 }

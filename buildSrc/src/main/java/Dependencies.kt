@@ -26,6 +26,7 @@ object Versions {
         const val constraintLayout = "2.0.4"
         const val lifecycle = "2.2.0"
         const val activityKtx = "1.3.1"
+        const val annotation = "1.2.0"
 
         const val viewModel = "2.3.1"
         const val liveData = "2.3.1"
@@ -33,6 +34,7 @@ object Versions {
         const val viewModel_hilt = "1.0.0"
 
         const val room = "2.3.0"
+        const val pagingLibrary3 = "3.0.1"
     }
 
     object Network {
@@ -71,7 +73,7 @@ object Libs {
         const val material = "com.google.android.material:material:${Versions.Android.material}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.Android.constraintLayout}"
         const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.Android.lifecycle}"
-
+        const val annotation = "androidx.annotation:annotation:${Versions.Android.annotation}"
 
         object JetPack {
             const val hilt_plugin = "com.google.dagger:hilt-android-gradle-plugin:${Versions.Android.hilt}"
@@ -86,6 +88,8 @@ object Libs {
             const val room = "androidx.room:room-runtime:${Versions.Android.room}"
             const val room_compiler = "androidx.room:room-compiler:${Versions.Android.room}"
             const val roomKtx = "androidx.room:room-ktx:${Versions.Android.room}"
+
+            const val pagingLibrary3 = "androidx.paging:paging-runtime:${Versions.Android.pagingLibrary3}"
         }
     }
 

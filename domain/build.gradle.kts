@@ -13,4 +13,7 @@ dependencies {
         implementation(coroutine)
         implementation(coroutineAndroid)
     }
+
+    implementation(Libs.inject)
+    implementation(Libs.Android.JetPack.pagingLibrary3)
 }
