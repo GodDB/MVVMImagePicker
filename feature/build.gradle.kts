@@ -12,6 +12,9 @@ android {
 
 dependencies {
 
+    implementation(project(":domain"))
+    implementation(project("share"))
+
     with(Libs.Kotlin){
         implementation(kotlin)
         implementation(coroutine)

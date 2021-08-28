@@ -5,6 +5,8 @@ plugins {
 
 dependencies {
 
+    implementation(project(":share"))
+
     with(Libs.Kotlin) {
         implementation(kotlin)
         implementation(coroutine)
