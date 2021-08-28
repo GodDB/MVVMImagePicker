@@ -1,0 +1,46 @@
+def hasLibraryPlugin = pluginManager.hasPlugin("com.android.library")
+def hasApplicationPlugin = pluginManager.hasPlugin("com.android.application")
+
+if (hasLibraryPlugin || hasApplicationPlugin) {
+
+    android {
+        compileSdk = App.compileSdk
+        buildToolsVersion = App.buildToolsVersion
+
+        defaultConfig {
+            targetSdk = App.targetSdk
+            minSdk = App.minSdk
+
+            if (hasLibraryPlugin) {
+                consumerProguardFiles("consumer-rulse.pro")
+            }
+        }
+
+        buildTypes {
+            debug {
+                if(hasApplicationPlugin){
+                    shrinkResources false
+                }
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+
+            release {
+                if(hasApplicationPlugin){
+                    shrinkResources false
+                }
+                minifyEnabled true
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = '1.8'
+        }
+    }
+}
