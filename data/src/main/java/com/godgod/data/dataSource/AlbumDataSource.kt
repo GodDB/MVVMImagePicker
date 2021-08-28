@@ -23,17 +23,9 @@ class AlbumDataSourceImpl @Inject constructor(private val albumProvider: AlbumDa
 
 class AlbumDataProvider @Inject constructor(private val context: Context) {
 
-    private val cachedAlbumData = mutableListOf<AlbumData>()
-
     @WorkerThread
     fun loadAlbum(pageIndex: Int, pageCount: Int): List<AlbumData> {
-        if (cachedAlbumData.size > (pageCount * pageIndex)) {
-
-            return cachedAlbumData.toList().subList(
-                pageIndex * pageCount,
-                cachedAlbumData.size.coerceAtMost((pageIndex * pageCount) + pageCount) - 1
-            )
-        }
+        val albumDatas = mutableListOf<AlbumData>()
 
         val resolver = context.contentResolver
 
@@ -75,10 +67,10 @@ class AlbumDataProvider @Inject constructor(private val context: Context) {
                 val mediaType = c.getString(mediaTypeColumn)
                 val uri = createUri(id, mediaType)
 
-                cachedAlbumData.add(createAlbumData(uri, duration, category, mediaType))
+                albumDatas.add(createAlbumData(uri, duration, category, mediaType))
             }
         }
-        return loadAlbum(pageIndex, pageCount)
+        return albumDatas
     }
 
     private fun createAlbumData(
