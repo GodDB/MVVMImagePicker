@@ -1,4 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
         google()
@@ -8,6 +7,7 @@ buildscript {
         classpath(Libs.gradle)
         classpath(Libs.Kotlin.plugin)
         classpath(Libs.Android.JetPack.hilt_plugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
     }
 }
 

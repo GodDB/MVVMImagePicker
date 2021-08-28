@@ -3,4 +3,4 @@ include(":app")
 include(":feature")
 include(":data")
 include(":domain")
-
+include(":share")
