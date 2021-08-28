@@ -6,7 +6,7 @@ plugins {
 dependencies {
 
     implementation(project(":data"))
-    implementation(project("share"))
+    implementation(project(":share"))
 
     with(Libs.Kotlin) {
         implementation(kotlin)

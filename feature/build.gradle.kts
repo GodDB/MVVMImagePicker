@@ -13,7 +13,7 @@ android {
 dependencies {
 
     implementation(project(":domain"))
-    implementation(project("share"))
+    implementation(project(":share"))
 
     with(Libs.Kotlin){
         implementation(kotlin)

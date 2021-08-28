@@ -7,7 +7,6 @@ buildscript {
         classpath(Libs.gradle)
         classpath(Libs.Kotlin.plugin)
         classpath(Libs.Android.JetPack.hilt_plugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
     }
 }
 
