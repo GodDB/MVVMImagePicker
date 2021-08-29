@@ -23,7 +23,6 @@ class AlbumPagingDataSource @Inject constructor(private val albumProvider: Album
             val pageSize = params.loadSize
 
             val albumList = albumProvider.loadAlbum(pageIndex, pageSize)
-
             LoadResult.Page(
                 data = albumList,
                 prevKey = if (pageIndex == DEFAULT_PAGE_INDEX) null else pageIndex - 1,
